@@ -8,21 +8,32 @@
 // 4. Replace placeholder data with props/state
 
 
+import type { AppState, HighScoreState } from "../features/prod-canvas-game/prod-canvas-game.types";
+import { PLAY_ROUTE_PATH } from "../game/game-runtime";
+
 export type PlayPageCanvasGameActionId = "start-game-1";
 
 export interface PlayPageCanvasGameProps {
   actions?: {
     "start-game-1"?: () => void;
   };
-
+  appState?: AppState;
+  highScore?: HighScoreState;
 }
 
 export type PlayPageCanvasGameActionCallbacks = NonNullable<PlayPageCanvasGameProps["actions"]>;
 
-export function PlayPageCanvasGame({ actions }: PlayPageCanvasGameProps) {
+export function PlayPageCanvasGame({ actions, appState, highScore }: PlayPageCanvasGameProps) {
+  const status = appState?.status ?? "idle";
+  const highScoreValue = highScore?.value ?? null;
+  const highScoreText = highScoreValue === null ? "0" : String(highScoreValue);
+  const highScoreValueText = highScoreValue === null ? "" : String(highScoreValue);
+  const statusLabel = status === "playing" ? "Playing" : "Ready";
+  const statusMessage = status === "playing" ? "Game started" : "Ready";
+
   return (
     <>
-      <div data-surface-id="SURF_PLAY_PAGE" className="min-h-screen flex flex-col" data-setfarm-element-ref="E000001" data-observable-refs="OBS_START_GAME_HIGH_SCORE_PERSISTED OBS_START_GAME_STAYS_ON_PLAY_ROUTE">
+      <div data-surface-id="SURF_PLAY_PAGE" className="min-h-screen flex flex-col" data-setfarm-element-ref="E000001" data-observable-refs="OBS_START_GAME_HIGH_SCORE_PERSISTED OBS_START_GAME_STAYS_ON_PLAY_ROUTE" data-route={PLAY_ROUTE_PATH} data-path={PLAY_ROUTE_PATH} data-value={highScoreValueText}>
           {/* Header / Navbar */}
           <header className="border-b border-slate-800/80 bg-slate-900/60 backdrop-blur px-6 py-4">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -38,9 +49,9 @@ export function PlayPageCanvasGame({ actions }: PlayPageCanvasGameProps) {
       
               <div className="flex items-center space-x-4">
                 {/* Observable: High score status readout */}
-                <div className="flex items-center space-x-2 bg-slate-800/70 border border-slate-700/60 rounded-lg px-3.5 py-1.5 shadow-sm" data-setfarm-element-ref="E000002" role="status" aria-label="High score" data-observable-refs="OBS_START_GAME_HIGH_SCORE_READOUT">
+                <div className="flex items-center space-x-2 bg-slate-800/70 border border-slate-700/60 rounded-lg px-3.5 py-1.5 shadow-sm" data-setfarm-element-ref="E000002" role="status" aria-label="High score" data-observable-refs="OBS_START_GAME_HIGH_SCORE_READOUT" data-value={highScoreValueText}>
                   <span className="text-xs uppercase font-medium tracking-wider text-slate-400">High Score</span>
-                  <span className="text-sm font-bold font-mono text-emerald-400">0</span>
+                  <span className="text-sm font-bold font-mono text-emerald-400">{highScoreText}</span>
                 </div>
       
                 {/* Route badge */}
@@ -66,7 +77,7 @@ export function PlayPageCanvasGame({ actions }: PlayPageCanvasGameProps) {
                     <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
                     <span className="ml-2 font-mono text-slate-400">canvas-viewport (1280 × 720)</span>
                   </div>
-                  <div className="font-mono text-xs text-slate-500">Status: Ready</div>
+                  <div className="font-mono text-xs text-slate-500">Status: {statusLabel}</div>
                 </div>
       
                 {/* Center Canvas Display Area */}
@@ -111,7 +122,7 @@ export function PlayPageCanvasGame({ actions }: PlayPageCanvasGameProps) {
                   <span className="text-xs text-slate-400 block mb-1.5 font-medium">Session Status</span>
                   <div className="flex items-center space-x-2.5 bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-slate-300" data-setfarm-element-ref="E000005" role="status" aria-label="Game started" data-observable-refs="OBS_START_GAME_STARTED_STATUS_MESSAGE">
                     <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                    <span className="font-medium text-emerald-400">Game started</span>
+                    <span className="font-medium text-emerald-400">{statusMessage}</span>
                   </div>
                 </div>
               </div>
@@ -130,7 +141,7 @@ export function PlayPageCanvasGame({ actions }: PlayPageCanvasGameProps) {
                   </div>
                   <div className="flex justify-between py-1">
                     <span className="text-slate-500">State</span>
-                    <span className="text-emerald-400 font-medium">Ready</span>
+                    <span className="text-emerald-400 font-medium">{statusLabel}</span>
                   </div>
                 </div>
               </div>
