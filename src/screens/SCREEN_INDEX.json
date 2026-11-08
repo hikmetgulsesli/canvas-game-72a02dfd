@@ -1,0 +1,162 @@
+[
+  {
+    "screenId": "3a2bf6ffbf6c41869927ae7bf8ded47e",
+    "title": "Play Page - Canvas Game",
+    "componentName": "PlayPageCanvasGame",
+    "file": "src/screens/PlayPageCanvasGame.tsx",
+    "buttons": 1,
+    "inputs": 0,
+    "textareas": 0,
+    "selects": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "start-game-1",
+        "kind": "button",
+        "label": "Start Game",
+        "index": 0,
+        "actionRef": "ACT_START_GAME",
+        "sourceElementRef": "E000004",
+        "physicalControlRef": "CTRL_97fa2c2956c4b88f",
+        "controlSlotRef": "CSLOT_START_GAME_START_BUTTON",
+        "surfaceRef": "SURF_PLAY_PAGE",
+        "affectedSurfaceRefs": [
+          "SURF_GAME_CANVAS",
+          "SURF_PLAY_PAGE"
+        ],
+        "tagName": "button",
+        "nativeControlKind": "button",
+        "role": null,
+        "ariaLabel": null,
+        "href": null,
+        "interactiveRole": false,
+        "generatedLocalId": "start-game-1",
+        "semanticSource": "data-action",
+        "sourceLocator": "stitch/rendered-dom-v2/3a2bf6ffbf6c41869927ae7bf8ded47e.html",
+        "selector": "[data-action-id=\"start-game-1\"]"
+      }
+    ],
+    "controls": [
+      {
+        "id": "start-game-1",
+        "kind": "button",
+        "label": "Start Game",
+        "index": 0,
+        "actionRef": "ACT_START_GAME",
+        "sourceElementRef": "E000004",
+        "physicalControlRef": "CTRL_97fa2c2956c4b88f",
+        "controlSlotRef": "CSLOT_START_GAME_START_BUTTON",
+        "surfaceRef": "SURF_PLAY_PAGE",
+        "affectedSurfaceRefs": [
+          "SURF_GAME_CANVAS",
+          "SURF_PLAY_PAGE"
+        ],
+        "tagName": "button",
+        "nativeControlKind": "button",
+        "role": null,
+        "ariaLabel": null,
+        "href": null,
+        "interactiveRole": false,
+        "generatedLocalId": "start-game-1",
+        "semanticSource": "data-action",
+        "sourceLocator": "stitch/rendered-dom-v2/3a2bf6ffbf6c41869927ae7bf8ded47e.html",
+        "selector": "[data-action-id=\"start-game-1\"]",
+        "generatedSourceLocator": "src/screens/PlayPageCanvasGame.tsx"
+      }
+    ],
+    "observables": [
+      {
+        "observableRef": "OBS_START_GAME_HIGH_SCORE_PERSISTED",
+        "actionRef": "ACT_START_GAME",
+        "selectorKind": "surface",
+        "surfaceRef": "SURF_PLAY_PAGE",
+        "evidenceRef": "EVID_START_GAME_HIGH_SCORE_PERSISTED",
+        "sourceElementRef": "E000001",
+        "sourceLocator": "stitch/rendered-dom-v2/3a2bf6ffbf6c41869927ae7bf8ded47e.html",
+        "selector": "[data-observable-refs~=\"OBS_START_GAME_HIGH_SCORE_PERSISTED\"]",
+        "generatedSourceLocator": "src/screens/PlayPageCanvasGame.tsx"
+      },
+      {
+        "observableRef": "OBS_START_GAME_HIGH_SCORE_READOUT",
+        "role": "status",
+        "name": "High score",
+        "actionRef": "ACT_START_GAME",
+        "selectorKind": "accessibility",
+        "surfaceRef": "SURF_PLAY_PAGE",
+        "evidenceRef": "EVID_START_GAME_HIGH_SCORE_READOUT",
+        "sourceElementRef": "E000002",
+        "sourceLocator": "stitch/rendered-dom-v2/3a2bf6ffbf6c41869927ae7bf8ded47e.html",
+        "selector": "[data-observable-refs~=\"OBS_START_GAME_HIGH_SCORE_READOUT\"]",
+        "generatedSourceLocator": "src/screens/PlayPageCanvasGame.tsx"
+      },
+      {
+        "observableRef": "OBS_START_GAME_STARTED_STATUS_MESSAGE",
+        "role": "status",
+        "name": "Game started",
+        "actionRef": "ACT_START_GAME",
+        "selectorKind": "accessibility",
+        "surfaceRef": "SURF_PLAY_PAGE",
+        "evidenceRef": "EVID_START_GAME_STARTED_STATUS_MESSAGE",
+        "sourceElementRef": "E000005",
+        "sourceLocator": "stitch/rendered-dom-v2/3a2bf6ffbf6c41869927ae7bf8ded47e.html",
+        "selector": "[data-observable-refs~=\"OBS_START_GAME_STARTED_STATUS_MESSAGE\"]",
+        "generatedSourceLocator": "src/screens/PlayPageCanvasGame.tsx"
+      },
+      {
+        "observableRef": "OBS_START_GAME_START_BUTTON_STATE",
+        "actionRef": "ACT_START_GAME",
+        "selectorKind": "control",
+        "controlSlotRef": "CSLOT_START_GAME_START_BUTTON",
+        "evidenceRef": "EVID_START_GAME_START_BUTTON_STATE",
+        "sourceElementRef": "E000004",
+        "sourceLocator": "stitch/rendered-dom-v2/3a2bf6ffbf6c41869927ae7bf8ded47e.html",
+        "selector": "[data-observable-refs~=\"OBS_START_GAME_START_BUTTON_STATE\"]",
+        "generatedSourceLocator": "src/screens/PlayPageCanvasGame.tsx"
+      },
+      {
+        "observableRef": "OBS_START_GAME_STAYS_ON_PLAY_ROUTE",
+        "actionRef": "ACT_START_GAME",
+        "selectorKind": "surface",
+        "surfaceRef": "SURF_PLAY_PAGE",
+        "evidenceRef": "EVID_START_GAME_STAYS_ON_PLAY_ROUTE",
+        "sourceElementRef": "E000001",
+        "sourceLocator": "stitch/rendered-dom-v2/3a2bf6ffbf6c41869927ae7bf8ded47e.html",
+        "selector": "[data-observable-refs~=\"OBS_START_GAME_STAYS_ON_PLAY_ROUTE\"]",
+        "generatedSourceLocator": "src/screens/PlayPageCanvasGame.tsx"
+      }
+    ],
+    "projection": {
+      "schema": "setfarm.stitch-screen-projection.v2",
+      "mode": "contract_only",
+      "targetRef": "TARGET_PLAY_PAGE",
+      "authoritySchema": "setfarm.design-interaction-graph.v2",
+      "rawInteractiveCounts": {
+        "buttons": 1,
+        "links": 0,
+        "inputs": 0,
+        "textareas": 0,
+        "selects": 0
+      },
+      "requiredObservableRefs": [
+        "OBS_START_GAME_HIGH_SCORE_PERSISTED",
+        "OBS_START_GAME_HIGH_SCORE_READOUT",
+        "OBS_START_GAME_STARTED_STATUS_MESSAGE",
+        "OBS_START_GAME_START_BUTTON_STATE",
+        "OBS_START_GAME_STAYS_ON_PLAY_ROUTE"
+      ]
+    },
+    "componentApi": {
+      "schema": "setfarm.generated-screen-component-api.v1",
+      "actionsPropName": "actions",
+      "actionBindings": [
+        {
+          "generatedLocalId": "start-game-1",
+          "actionRef": "ACT_START_GAME",
+          "inputFields": []
+        }
+      ],
+      "inputTransports": []
+    },
+    "rejectedControls": []
+  }
+]
